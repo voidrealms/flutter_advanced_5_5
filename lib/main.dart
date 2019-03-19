@@ -42,6 +42,19 @@ class _State extends State<MyApp> {
   }
 
   void _signInGoogle() async {
+    
+    /*
+    If you are using the new version, signInWithGoogle has been depreciated
+    Try...
+    
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+    accessToken: googleAuth.accessToken,
+    idToken: googleAuth.idToken,
+    );
+
+    final FirebaseUser user = await _auth.signInWithCredential(credential);
+    */
+    
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
