@@ -52,7 +52,8 @@ class _State extends State<MyApp> {
     idToken: googleAuth.idToken,
     );
 
-    final FirebaseUser user = await _auth.signInWithCredential(credential);
+    
+    final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
     */
     
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
